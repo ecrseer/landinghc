@@ -54,9 +54,17 @@ section{
   text-align: center;
 }
 [type="submit"]{
-  color:var(--cor-primaria);
-  background:none;
+  color: var(--cor-primaria);
+  background: none;
+  margin: 1vh 3vh;
+  border: 1px solid #e5007d7d;
+  border-radius: 1vh;
+  padding: 1vh 3vh;
+}
 
-  margin-left: 3vh;
+[type="submit"]:hover{
+  color:#fdc100;
+  background: var(--cor-primaria);
+  border: none;
 }
 
