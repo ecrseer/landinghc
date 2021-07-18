@@ -1,6 +1,7 @@
 import {useEffect, useState} from "react";
 
-export default function Cadastro(history){
+
+const Cadastro = ({historia})=>{
     const [dadosUsuario,setDadosUsuario] = useState({nome:'',email:''})
     function atualizadorDados(evento){
 
@@ -25,7 +26,8 @@ export default function Cadastro(history){
             salvaStorage()
             evento.preventDefault()
             evento.stopPropagation()
-            history.push("/sucesso")
+            historia.push("/sucesso")
+
 
         }
     },[])
@@ -41,3 +43,4 @@ export default function Cadastro(history){
         </form>
     )
 }
+export default Cadastro;

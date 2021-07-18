@@ -1,5 +1,5 @@
 export default function Cadastrado(){
     return(
-        <h1>cadastrado</h1>
+        <h1>Você já foi cadastrado</h1>
     )
 }

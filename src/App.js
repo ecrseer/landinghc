@@ -7,6 +7,7 @@ import {
     Switch,
     Route,
     Link,
+
     useHistory,
 } from "react-router-dom";
 import Cadastro from "./components/Cadastro";
@@ -35,10 +36,10 @@ function App() {
                       <Cadastrado/>
                   </Route>
                   <Route path="/sucesso">
-                      <Sucesso/>
+                      <Sucesso historia={history}/>
                   </Route>
                   <Route className="" path="/">
-                      <Cadastro history={history}/>
+                      <Cadastro historia={history}/>
                   </Route>
               </Switch>
 
