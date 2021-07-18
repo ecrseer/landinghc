@@ -3,6 +3,10 @@
   flex-direction: column;
   align-items: center;
 }
+p{
+  padding: 11vh 0vh;
+
+}
 .App-header {
   background-image: url("assets/bfbackground2.png");
   background-attachment: fixed;
@@ -30,7 +34,7 @@ footer{
 }
 section{
   background-image: url("assets/bfbackground.jpg");
-background-position: center;
+  background-position: center;
   width: 100%;
   min-height: 100vh;
 }
