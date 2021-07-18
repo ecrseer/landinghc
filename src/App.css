@@ -36,8 +36,11 @@ footer{
   color:#fdc100;
 }
 section{
-  background-image: url("assets/bfbackground.jpg");
+  background-image: linear-gradient(rgba(253, 193, 0, 0.5),
+  rgba(0, 0, 0, 0.9)),url("assets/bfbackground.jpg");
   background-position: center;
+  display: flex;
+  flex-direction: row;
   width: 100%;
   min-height: 100vh;
 }
