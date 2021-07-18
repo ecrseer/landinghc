@@ -1,13 +1,9 @@
 
 import './App.css';
-import {useEffect, useState} from "react";
+import {useEffect} from "react";
 import {
-
-    BrowserRouter as Router,
     Switch,
     Route,
-    Link,
-
     useHistory,
 } from "react-router-dom";
 import Cadastro from "./components/Cadastro";

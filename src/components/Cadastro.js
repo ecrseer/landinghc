@@ -34,10 +34,10 @@ const Cadastro = ({historia})=>{
     return(
         <form id="debg" action="" method="GET">
 
-            <div>Nome: <input type="text" placeholder="Como desejar ser chamado"
+            <div> <input type="text" placeholder="Como desejar ser chamado"
                               className="type" name="nome" required
                               onChange={atualizadorDados}  /></div>
-            <div>Email: <input type="email"  className="type"
+            <div> <input type="email"  className="type"
                                required placeholder="Seu melhor email"
                                name="email" onChange={atualizadorDados}/></div>
             <button type="submit" className="btn" >Ficar por dentro</button>

@@ -6,7 +6,7 @@
   --cor-primaria:#e5007d
 }
 p{
-  padding: 11vh 0vh;
+  padding: 12vh 0vh;
 
 }
 .App-header {
@@ -44,11 +44,19 @@ section{
   border: none;
   background: none;
   border-bottom: solid 1px;
-  color:var(--cor-primaria)
+  color:var(--cor-primaria);
+  height: 3vh;
+  text-align: center;
 
 }
 .type::placeholder{
   color: var(--cor-primaria);
   text-align: center;
+}
+[type="submit"]{
+  color:var(--cor-primaria);
+  background:none;
+
+  margin-left: 3vh;
 }
 
