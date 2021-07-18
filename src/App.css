@@ -33,6 +33,7 @@ footer{
   width: 100%;
   display: flex;
   justify-content: center;
+  color:#fdc100;
 }
 section{
   background-image: url("assets/bfbackground.jpg");
@@ -65,6 +66,6 @@ section{
 [type="submit"]:hover{
   color:#fdc100;
   background: var(--cor-primaria);
-  border: none;
+
 }
 
