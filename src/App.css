@@ -22,12 +22,20 @@
   font-size: calc(10px + 2vmin);
 
 }
-.App-header > {
-
+footer{
+  background: #e5007d;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
-
+section{
+  background-image: url("assets/bfbackground.jpg");
+background-position: center;
+  width: 100%;
+  min-height: 100vh;
+}
 .type{
-  /*backgrou*/
+
   color:red;
 }
 

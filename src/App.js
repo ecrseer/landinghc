@@ -6,16 +6,6 @@ function App() {
 
     const [dadosUsuario,setDadosUsuario] = useState({nome:'',email:''})
 
-    useEffect(()=>{
-        const dadosDeserializados = JSON.parse(localStorage.getItem('dadosUsuario'))
-        setDadosUsuario(dadosDeserializados)
-        let formulario = document.querySelector('form')
-        formulario.onsubmit = (evento)=>{
-            console.log('lovvs')
-            evento.preventDefault()
-        }
-    },[])
-
     function atualizadorDados(evento){
 
         function atualizaEstadoObjeto(objetoAnterior){
@@ -29,15 +19,24 @@ function App() {
         console.log(dadosUsuario)
     }
 
-    function salvaStorage(e){
-        //e.preventDefault();
-
-        console.log(`for ema`)
+    function salvaStorage(){
         const dadosSerializados = JSON.stringify(dadosUsuario);
         localStorage.setItem('dadosUsuario',dadosSerializados)
-
     }
-//    document.addEventListener('onsub')
+
+    useEffect(()=>{
+        const dadosDeserializados = JSON.parse(localStorage.getItem('dadosUsuario'))
+        setDadosUsuario(dadosDeserializados)
+        let formulario = document.querySelector('form')
+        formulario.onsubmit = (evento)=>{
+            evento.preventDefault()
+        }
+    },[])
+
+
+
+
+
 
   return (
     <div className="App">
@@ -48,17 +47,18 @@ function App() {
         <form id="debg" action="" method="GET">
 
             <div>Nome: <input type="text" placeholder="Como desejar ser chamado"
-                              className="type" name="nome" onChange={atualizadorDados}  /></div>
-            <div>Email: <input type="email"  className="type"
+                              className="type" name="nome" required
+                              onChange={atualizadorDados}  /></div>
+            <div>Email: <input type="email"  className="type" required
                                name="email" onChange={atualizadorDados}/></div>
             <button type="submit" className="btn" >Ficar por dentro</button>
         </form>
 
       </header>
         <section>
-
+a
         </section>
-      <footer>footerdfooter</footer>
+      <footer>made with ❤️ by gjm</footer>
     </div>
   );
 }
