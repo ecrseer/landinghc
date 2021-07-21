@@ -34,7 +34,7 @@ const Cadastro = ({historia})=>{
     return(
         <form id="debg" action="" method="GET">
 
-            <div> <input type="text" placeholder="Como desejar ser chamado"
+            <div> <input type="text" placeholder="Como deseja ser chamado"
                               className="type" name="nome" required
                               onChange={atualizadorDados}  /></div>
             <div> <input type="email"  className="type"

@@ -9,6 +9,7 @@ import {
 import Cadastro from "./components/Cadastro";
 import Cadastrado from "./components/Cadastrado";
 import Sucesso from "./components/Sucesso";
+import SectionCards from "./components/SectionCards";
 
 function App() {
     const history = useHistory();
@@ -42,6 +43,7 @@ function App() {
 
       </header>
         <section>
+            <SectionCards/>
 
         </section>
       <footer>made with ❤️ by gjm</footer>
