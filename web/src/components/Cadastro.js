@@ -4,6 +4,7 @@ import {useRouteMatch} from 'react-router-dom';
 const Cadastro = ({historia})=>{
     let match = useRouteMatch();
     const [dadosUsuario,setDadosUsuario] = useState({nome:'',email:''})
+    const [nomeUsuario,setNomeUsuario] = useState("")
     function atualizadorDados(evento){
 
         function atualizaEstadoObjeto(objetoAnterior){
@@ -21,17 +22,19 @@ const Cadastro = ({historia})=>{
         const dadosSerializados = JSON.stringify(dadosUsuario);
         localStorage.setItem('dadosUsuario',dadosSerializados)
     }
-    useEffect(()=>{
-        let formulario = document.querySelector('form')
-        formulario.onsubmit = (evento)=>{
-            salvaStorage()
-            evento.preventDefault()
-            evento.stopPropagation()
+    function handleFormulario(evento){
+        const formu = document.querySelector("form")
+        formu.checkValidity()
+        formu.reportValidity()
+
+        evento.preventDefault()
+        evento.stopPropagation()
+        salvaStorage()
+
+        if(historia){
             historia.push(`${match.url}/sucesso`)
-
-
         }
-    },[])
+    }
     return(
         <form id="debg" action="" method="GET">
 
@@ -41,7 +44,11 @@ const Cadastro = ({historia})=>{
             <div> <input type="email"  className="type"
                                required placeholder="Seu melhor email"
                                name="email" onChange={atualizadorDados}/></div>
-            <button type="submit" className="btn" >Ficar por dentro</button>
+            <h1 onClick={()=>salvaStorage() }>
+                teste
+            </h1>
+            <button   className="btn" onClick={handleFormulario}>
+                Ficar por dentro</button>
         </form>
     )
 }

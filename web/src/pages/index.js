@@ -1,24 +1,32 @@
-import {withRouter,Link} from 'react-router-dom'
+
+import {withRouter, Link, useRouteMatch} from 'react-router-dom'
 import './index.css'
 import Cadastro from '../components/Cadastro';
 import SectionCards from "../components/SectionCards";
 import Card from '../components/Card'
 import { Switch,Route} from 'react-router-dom';
 const Index = () =>{
+    let match = useRouteMatch();
     return (
+        <>
+     {/*nao funcionou*/}
         <div className=" App-header main">
-            <Switch>
-                <Route exact path={"/entrar"}>
-                    <Cadastro/>
-                </Route>
-                <Route exact path={"/"}>
-                    <Card/>
 
+            <Switch>
+                <Route className=""
+                       exact path={`${match.path}/`}>
+                    <Card/>
+                </Route>
+
+                <Route className=""
+                   exact path={`${match.path}/entrar`}>
+                    <Cadastro/>
                 </Route>
             </Switch>
 
             <SectionCards/>
-            <Cadastro/>
-        </div>)
+        </div>
+
+        </>)
 }
 export default Index;

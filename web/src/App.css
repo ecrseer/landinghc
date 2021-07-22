@@ -14,3 +14,14 @@ footer{
   justify-content: center;
   color:#fdc100;
 }
+/**index*/
+.main {
+
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+}
+@media (max-width: 600px){
+  .main{
+    grid-template-columns: 1fr;
+  }
+}
