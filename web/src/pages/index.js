@@ -17,6 +17,7 @@ const Index = () =>{
             </Switch>
 
             <SectionCards/>
+            <Cadastro/>
         </div>)
 }
 export default Index;

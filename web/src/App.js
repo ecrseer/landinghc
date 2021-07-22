@@ -19,7 +19,7 @@ function App() {
   return (
       <BrowserRouter>
       <div className="App">
-        <Link to="/ficarsabendo">link do ind</Link>
+        <Link to="/ficarsabendo">links e botoes</Link>
         <Switch>
             <Route className="" path="/ficarsabendo">
                 <Landing/>
@@ -30,6 +30,7 @@ function App() {
         </Switch>
 
     </div>
+          <footer>made with ❤️ by gjm</footer>
   </BrowserRouter>
 
   );

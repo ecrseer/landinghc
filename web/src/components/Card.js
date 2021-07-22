@@ -1,8 +1,8 @@
 const Card = ()=>{
     return(
     <div className="card">
-        <p>Titulo</p>
-        <p>subtitulo</p>
+        <p>Produto</p>
+        <p>R$ subtitulo</p>
         <img src="" alt=""/>
     </div>
     )
