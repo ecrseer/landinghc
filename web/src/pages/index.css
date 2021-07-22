@@ -8,3 +8,8 @@
     display: grid;
     grid-template-columns: 1fr 4fr;
 }
+@media (max-width: 600px){
+    .main{
+        grid-template-columns: 1fr;
+    }
+}
