@@ -13,13 +13,14 @@ import Landing from './pages/landing';
 import Index from './pages/index';
 
 import Store from './pages/store';
+import Navbar from "./components/Navbar";
 
 function App() {
     const history = useHistory();
   return (
       <BrowserRouter>
       <div className="App">
-        <Link to="/ficarsabendo">links e botoes</Link>
+        <Navbar/>
         <Switch>
             <Route className="" path="/ficarsabendo">
                 <Landing/>
