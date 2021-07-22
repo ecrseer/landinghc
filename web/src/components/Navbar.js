@@ -1,7 +1,7 @@
 import {Menu,Toolbar,MenuItem,AppBar} from '@material-ui/core'
 const Navbar=()=>{
     return(
-        <AppBar>
+        <AppBar position={"sticky"}>
             <Toolbar>
                 abcd
                 <Menu>

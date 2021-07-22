@@ -44,7 +44,7 @@ section{
   border-bottom: solid 1px;
   color:var(--cor-primaria);
   height: 3vh;
-
+  outline: none;
   width: 30vh;
   text-align: center;
 

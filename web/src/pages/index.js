@@ -2,6 +2,7 @@ import {withRouter,Link} from 'react-router-dom'
 import './index.css'
 import Cadastro from '../components/Cadastro';
 import SectionCards from "../components/SectionCards";
+import Card from '../components/Card'
 import { Switch,Route} from 'react-router-dom';
 const Index = () =>{
     return (
@@ -11,7 +12,7 @@ const Index = () =>{
                     <Cadastro/>
                 </Route>
                 <Route exact path={"/"}>
-                    <Cadastro/>
+                    <Card/>
 
                 </Route>
             </Switch>
