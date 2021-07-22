@@ -1,5 +1,7 @@
 import {useEffect, useState} from "react";
 import Card from "./Card"
+import './SectionCards.css'
+
 const SectionCards = ()=>{
     const [produtos,setProdutos] = useState();
     useEffect(()=>{
@@ -10,17 +12,18 @@ const SectionCards = ()=>{
 
     },[])
     return(
-        <div>
+        <div className="SectionCards">
             <Card/>
             <Card/>
             <Card/>
-            {produtos? produtos.map(produto=>
-                <h1>1</h1>
-            ):
-                <div></div>}
 
+            <Card/>
+            <Card/>
+            <Card/>
 
-
+            <Card/>
+            <Card/>
+            <Card/>
         </div>
     )
 }

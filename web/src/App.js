@@ -1,53 +1,37 @@
 
 import './App.css';
-import {useEffect} from "react";
+
+
 import {
     Switch,
     Route,
+    BrowserRouter,
     useHistory,
+    Link,
 } from "react-router-dom";
-import Cadastro from "./components/Cadastro";
-import Cadastrado from "./components/Cadastrado";
-import Sucesso from "./components/Sucesso";
-import SectionCards from "./components/SectionCards";
+import Landing from './pages/landing';
+import Index from './pages/index';
+
+import Store from './pages/store';
 
 function App() {
     const history = useHistory();
-    useEffect(()=>{
-        const dadosUsuario = localStorage.getItem('dadosUsuario')
-        if(dadosUsuario){
-            history.push("/cadastrado")
-        }else{
-            history.push("/")
-        }
-    },[])
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Receba as melhores ofertas no seu melhor email!
-        </p>
+      <BrowserRouter>
+      <div className="App">
+        <Link to="/ficarsabendo">link do ind</Link>
+        <Switch>
+            <Route className="" path="/ficarsabendo">
+                <Landing/>
+            </Route>
+            <Route className="" exact path={`/`}>
+                <Index/>
+            </Route>
+        </Switch>
 
-              <Switch>
-                  <Route className="" path="/cadastrado">
-                      <Cadastrado/>
-                  </Route>
-                  <Route path="/sucesso">
-                      <Sucesso historia={history}/>
-                  </Route>
-                  <Route className="" path="/">
-                      <Cadastro historia={history}/>
-                  </Route>
-              </Switch>
-
-
-      </header>
-        <section>
-            <SectionCards/>
-
-        </section>
-      <footer>made with ❤️ by gjm</footer>
     </div>
+  </BrowserRouter>
+
   );
 }
 

@@ -1,7 +1,9 @@
 const Card = ()=>{
     return(
-    <div>
+    <div className="card">
         <p>Titulo</p>
+        <p>subtitulo</p>
+        <img src="" alt=""/>
     </div>
     )
 }

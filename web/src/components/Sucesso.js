@@ -3,7 +3,7 @@ import {useEffect} from "react";
 export default function Sucesso({historia}){
     useEffect(()=>{
         setTimeout(()=>{
-            historia.push("/cadastrado")
+            historia.push("/")
         },5000)
     },[])
     return(

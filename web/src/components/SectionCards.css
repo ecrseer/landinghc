@@ -1,0 +1,19 @@
+.SectionCards{
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border: 1px  solid var(--cor-primaria);
+    height: 90%;
+    justify-content: center;
+    align-items: center;
+}
+.card{
+
+
+}
+.card *{
+    margin: 0;
+    padding: 1px;
+
+}

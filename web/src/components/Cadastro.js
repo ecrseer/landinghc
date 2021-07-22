@@ -1,7 +1,8 @@
 import {useEffect, useState} from "react";
-
+import {useRouteMatch} from 'react-router-dom';
 
 const Cadastro = ({historia})=>{
+    let match = useRouteMatch();
     const [dadosUsuario,setDadosUsuario] = useState({nome:'',email:''})
     function atualizadorDados(evento){
 
@@ -26,7 +27,7 @@ const Cadastro = ({historia})=>{
             salvaStorage()
             evento.preventDefault()
             evento.stopPropagation()
-            historia.push("/sucesso")
+            historia.push(`${match.url}/sucesso`)
 
 
         }

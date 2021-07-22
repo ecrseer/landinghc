@@ -1,0 +1,10 @@
+.main{
+    --cor-primaria:#e5007d;
+    --cor-segundaria:#fdc100;
+
+}
+.main {
+
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+}
