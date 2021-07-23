@@ -47,8 +47,12 @@ function App() {
             </Route>
             <Route className={""} exact path={`/adminsignin`}>
                 <div className=" App-header main">
-                    <Cadastro msgBotao={'Entrar'} isLogin={true}
-                    camposAdicionais={CAMPOS_LOGIN_ADMIN}/>
+                    <div>
+                        <h1>Login</h1>
+                        <Cadastro msgBotao={'Entrar'} isLogin={true}
+                                  camposAdicionais={CAMPOS_LOGIN_ADMIN}/>
+                    </div>
+
                     <SectionCards/>
                     <Card/>
                 </div>

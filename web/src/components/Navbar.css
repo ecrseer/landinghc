@@ -2,3 +2,6 @@ a{
     margin: 5vh;
     color:white;
 }
+a:last-child{
+    font-size: 73%;
+}
