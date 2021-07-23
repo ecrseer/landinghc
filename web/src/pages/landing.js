@@ -14,8 +14,8 @@ const LandingPage = () =>{
     let match = useRouteMatch();
 
     useEffect(()=>{
-        const dadosUsuario = localStorage.getItem('dadosUsuario')
-        if(dadosUsuario){
+        const dadosSessao = localStorage.getItem('sessao')
+        if(dadosSessao){
             history.push(`${match.url}/cadastrado`)
         }else{
             history.push(`${match.url}/`)
@@ -46,9 +46,9 @@ const LandingPage = () =>{
             </header>
             <section>
 
-
             </section>
-            <footer>made with ❤️ by gjm</footer>
+
+
         </>
     )
 }

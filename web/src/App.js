@@ -19,6 +19,9 @@ import Card from "./components/Card";
 import Cadastro from "./components/Cadastro";
 
 function App() {
+    const CAMPOS_LOGIN_ADMIN=[
+        {nome:'',tipo:''}
+    ]
     const history = useHistory();
   return (
       <BrowserRouter>
@@ -35,11 +38,19 @@ function App() {
             </Route>
             <Route className={""} exact path={`/logar`}>
                 <div className=" App-header main">
-                <Cadastro />
+                <Cadastro msgBotao={'Criar conta'}/>
                 <SectionCards/>
                     <Card/>
                 </div>
             </Route>
+            <Route className={""} exact path={`/adminsignin`}>
+                <div className=" App-header main">
+                    <Cadastro msgBotao={'Entrar'} isLogin={true}/>
+                    <SectionCards/>
+                    <Card/>
+                </div>
+            </Route>
+
             <Route className="" exact path={`/`}>
                 <div className=" App-header main">
                     <Card/>

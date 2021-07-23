@@ -53,7 +53,7 @@ section{
   color: var(--cor-primaria);
   text-align: center;
 }
-[type="submit"]{
+button{
   color: var(--cor-primaria);
   background: none;
   margin: 1vh 3vh;
@@ -62,7 +62,7 @@ section{
   padding: 1vh 3vh;
 }
 
-[type="submit"]:hover{
+button:hover{
   color:#fdc100;
   background: var(--cor-primaria);
 
