@@ -1,11 +1,12 @@
 import {useEffect, useState} from "react";
 import {useHistory, useRouteMatch} from 'react-router-dom';
-
+import './Cadastro.css'
 const Cadastro = ({historia,msgBotao,camposAdicionais,isLogin=false})=>{
     let history = useHistory()
     let match = useRouteMatch();
     const [dadosUsuario,setDadosUsuario] = useState({nome:'',email:''})
     const [nomeUsuario,setNomeUsuario] = useState("")
+    const [alerta,setAlerta] = useState('')
     function atualizadorDados(evento){
 
         function atualizaEstadoObjeto(objetoAnterior){
@@ -40,8 +41,16 @@ const Cadastro = ({historia,msgBotao,camposAdicionais,isLogin=false})=>{
                 dadosDB.push(dadosUsuario)
                 localStorage.setItem("dadosUsuarios", JSON.stringify(dadosDB))
             }else{
-                localStorage.setItem("sessaoAtual",JSON.stringify(usuarioExistente[0]))
-                history.push("/")
+
+                let isSenhaCorreta = usuarioExistente[0].senha===dadosUsuario.senha
+                if(isSenhaCorreta){
+                    localStorage.setItem("sessaoAtual",JSON.stringify(usuarioExistente[0]))
+                    history.push("/")
+                    return
+                }
+                setAlerta('Senha incorreta, tente novamente')
+
+
             }
 
 
@@ -57,11 +66,14 @@ const Cadastro = ({historia,msgBotao,camposAdicionais,isLogin=false})=>{
     function handleFormulario(evento){
 
         let formu = document.querySelector("form")
-        formu.checkValidity()
+        const formularioPreenchido = formu.checkValidity()
         formu.reportValidity()
 
         evento.preventDefault()
         evento.stopPropagation()
+        if(!formularioPreenchido){
+            return;
+        }
         salvaStorage()
 
         if(historia){
@@ -70,7 +82,7 @@ const Cadastro = ({historia,msgBotao,camposAdicionais,isLogin=false})=>{
     }
     return(
         <form id="debg" action="" method="GET">
-
+            <span style={{color:'#444'}}>{alerta}</span>
             <div> <input type="text" placeholder="Como deseja ser chamado"
                               className="type" name="nome" required
                               onChange={atualizadorDados}  /></div>
@@ -87,6 +99,7 @@ const Cadastro = ({historia,msgBotao,camposAdicionais,isLogin=false})=>{
                                        className="type"
                                        name={descricaoCampo.nome}
                                        onChange={atualizadorDados}
+                                       placeholder={descricaoCampo.placehold}
                                 />
                             </div>
                         )

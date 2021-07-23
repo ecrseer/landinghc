@@ -38,33 +38,4 @@ section{
   min-height: 100vh;
 }
 
-.type{
-  border: none;
-  background: none;
-  border-bottom: solid 1px;
-  color:var(--cor-primaria);
-  height: 3vh;
-  outline: none;
-  width: 30vh;
-  text-align: center;
-
-}
-.type::placeholder{
-  color: var(--cor-primaria);
-  text-align: center;
-}
-button{
-  color: var(--cor-primaria);
-  background: none;
-  margin: 1vh 3vh;
-  border: 1px solid #e5007d7d;
-  border-radius: 1vh;
-  padding: 1vh 3vh;
-}
-
-button:hover{
-  color:#fdc100;
-  background: var(--cor-primaria);
-
-}
 

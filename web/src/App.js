@@ -20,7 +20,9 @@ import Cadastro from "./components/Cadastro";
 
 function App() {
     const CAMPOS_LOGIN_ADMIN=[
-        {nome:'',tipo:''}
+        {nome:'senha',
+            tipo:'password',
+            placehold:'Digite sua senha'}
     ]
     const history = useHistory();
   return (
@@ -45,7 +47,8 @@ function App() {
             </Route>
             <Route className={""} exact path={`/adminsignin`}>
                 <div className=" App-header main">
-                    <Cadastro msgBotao={'Entrar'} isLogin={true}/>
+                    <Cadastro msgBotao={'Entrar'} isLogin={true}
+                    camposAdicionais={CAMPOS_LOGIN_ADMIN}/>
                     <SectionCards/>
                     <Card/>
                 </div>
