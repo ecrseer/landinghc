@@ -1,7 +1,7 @@
 a{
-    margin: 5vh;
+    margin: 2vh;
     color:white;
 }
-a:last-child{
+.diminuirlink{
     font-size: 73%;
 }

@@ -1,0 +1,16 @@
+
+.btnpadrao{
+
+    color: var(--cor-primaria);
+    background: none;
+    margin: 1vh 13vh;
+    border: 1px solid #e5007d7d;
+    border-radius: 1vh;
+    padding: 1vh 3vh;
+}
+
+.btnpadrao:hover{
+    color:#fdc100;
+    background: var(--cor-primaria);
+
+}

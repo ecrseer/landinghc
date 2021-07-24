@@ -1,7 +1,8 @@
 import {useEffect, useState} from "react";
 import {useHistory, useRouteMatch} from 'react-router-dom';
 import './Cadastro.css'
-const Cadastro = ({historia,msgBotao,camposAdicionais,isLoginAdmin=false})=>{
+const Cadastro = ({historia,msgBotao,camposAdicionais,
+                      isLoginAdmin=false,isCadastro=true})=>{
     let history = useHistory()
     let match = useRouteMatch();
     const [dadosUsuario,setDadosUsuario] = useState({nome:'',email:''})
@@ -38,7 +39,7 @@ const Cadastro = ({historia,msgBotao,camposAdicionais,isLoginAdmin=false})=>{
                 )
 
 
-            if(usuarioExistente.length===0 || !isLoginAdmin) {
+            if(usuarioExistente.length===0 && isCadastro) {
                 dadosDB.push(dadosUsuario)
                 localStorage.setItem(select_from, JSON.stringify(dadosDB))
             }else{
@@ -115,7 +116,8 @@ const Cadastro = ({historia,msgBotao,camposAdicionais,isLoginAdmin=false})=>{
                     <></>
             }
 
-            <button   className="btn" onClick={handleFormulario}>
+            <button   className="btnpadrao" onClick={handleFormulario}>
+
                 {msgBotao?
                     msgBotao
                     :

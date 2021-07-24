@@ -17,13 +17,10 @@ import Navbar from "./components/Navbar";
 import SectionCards from "./components/SectionCards";
 import Card from "./components/Card";
 import Cadastro from "./components/Cadastro";
+import LoginSignin from "./largecomponents/LoginSignin";
 
 function App() {
-    const CAMPOS_LOGIN_ADMIN=[
-        {nome:'senha',
-            tipo:'password',
-            placehold:'Digite sua senha'}
-    ]
+
     const history = useHistory();
   return (
       <BrowserRouter>
@@ -45,14 +42,16 @@ function App() {
                     <Card/>
                 </div>
             </Route>
-            <Route className={""} exact path={`/adminsignin`}>
+            <Route className={""} exact path={`/entraradmin`}>
                 <div className=" App-header main">
-                    <div>
-                        <h1>Login</h1>
-                        <Cadastro msgBotao={'Entrar'} isLogin={true}
-                                  camposAdicionais={CAMPOS_LOGIN_ADMIN}/>
-                    </div>
-
+                    <LoginSignin isCadastro={false}/>
+                    <SectionCards/>
+                    <Card/>
+                </div>
+            </Route>
+            <Route className={""} exact path={`/criaradmin`}>
+                <div className=" App-header main">
+                    <LoginSignin isCadastro={true}/>
                     <SectionCards/>
                     <Card/>
                 </div>
@@ -61,9 +60,7 @@ function App() {
             <Route className="" exact path={`/`}>
                 <div className=" App-header main">
                     <Card/>
-                    <div>
-
-                    Vitrine:
+                    <div> Vitrine:
                     <SectionCards/>
                     </div>
                     <Card/>

@@ -14,21 +14,5 @@
     color: var(--cor-primaria);
     text-align: center;
 }
-button{
 
-    color: var(--cor-primaria);
-    background: none;
-    margin: 1vh 13vh;
-    border: 1px solid #e5007d7d;
-    border-radius: 1vh;
-    padding: 1vh 3vh;
-}
-
-button:hover{
-    color:#fdc100;
-    background: var(--cor-primaria);
-
-}
-form{
-    background: rgba(255, 255, 255, 0.1);
-}
+@import "Botao.css";

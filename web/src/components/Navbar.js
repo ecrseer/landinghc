@@ -2,13 +2,20 @@ import {Link, useHistory} from 'react-router-dom';
 import {Menu,Toolbar,MenuItem,AppBar} from '@material-ui/core'
 import {useEffect, useState} from "react";
 import './Navbar.css'
+function limparSessao(){
+    localStorage.removeItem('sessaoAtual')
+}
+
 const BotoesSessaoVazia = ()=>(
     <div>
         <Link to={`/logar`}> Entrar</Link>
-        <Link to={`/adminsignin`}>Entrar(administrador)</Link>
-        <Link to={`/ficarsabendo`}>Receba as melhores ofertas no seu email</Link>
+        <Link to={`/entraradmin`}>Entrar(administrador)</Link>
+        <Link to={`/ficarsabendo`} className="diminuirlink">Receba as melhores ofertas no seu email</Link>
+
+        <Link to={`/`} onClick={limparSessao}>Sair</Link>
     </div>
 )
+
 const Navbar=()=>{
     let history = useHistory()
     const [abrirMenu,setAbrirMenu] = useState(false)
@@ -32,6 +39,7 @@ const Navbar=()=>{
                     <MenuItem>1234</MenuItem>
                     <MenuItem>1234</MenuItem>
                 </Menu>*/}
+
             </Toolbar>
         </AppBar>
 

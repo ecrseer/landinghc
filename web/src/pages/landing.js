@@ -25,7 +25,7 @@ const LandingPage = () =>{
     return (
         <>
             <header className="App-header">
-                <p>
+                <p className="textolanding">
                     Receba as melhores ofertas no seu melhor email!
                 </p>
 
@@ -44,7 +44,7 @@ const LandingPage = () =>{
 
 
             </header>
-            <section>
+            <section className="fundolanding">
 
             </section>
 

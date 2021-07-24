@@ -5,7 +5,7 @@
   align-items: center;
 
 }
-p{
+.textolanding{
   padding: 12vh 0vh;
 
 }
@@ -29,7 +29,7 @@ p{
 
 }
 
-section{
+.fundolanding{
   background-image: linear-gradient(rgba(253, 193, 0, 0.5),
   rgba(0, 0, 0, 0.9)),url("../assets/bfbackground.jpg");
   background-position: center;
