@@ -35,6 +35,8 @@ function App() {
                     <Index/>
                 </div>
             </Route>
+
+
             <Route className={""} exact path={`/logar`}>
                 <div className=" App-header main">
                 <Cadastro msgBotao={'Criar conta'}/>

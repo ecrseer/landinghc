@@ -43,13 +43,21 @@ const Cadastro = ({historia,msgBotao,camposAdicionais,
                 dadosDB.push(dadosUsuario)
                 localStorage.setItem(select_from, JSON.stringify(dadosDB))
             }else{
+                if(usuarioExistente[0]){
+                    setAlerta('Conta inexistente')
 
-                let isSenhaCorreta = usuarioExistente[0].senha===dadosUsuario.senha
-                if(isSenhaCorreta){
-                    localStorage.setItem("sessaoAtual",
-                        JSON.stringify(usuarioExistente[0]))
-                    history.push("/")
-                    return
+                    let isSenhaCorreta = usuarioExistente[0].senha===dadosUsuario.senha
+                    if(isSenhaCorreta){
+                        localStorage.setItem("sessaoAtual",
+                            JSON.stringify(usuarioExistente[0]))
+                        history.push("/")
+                        return
+                    }
+                }
+
+                if(!usuarioExistente[0]){
+                    setAlerta('Conta inexistente')
+                    return;
                 }
                 if(isLoginAdmin){
                     setAlerta('Senha incorreta, tente novamente')

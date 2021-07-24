@@ -28,15 +28,15 @@ const Navbar=()=>{
             setIsLogado(false)
         }
 
-    },[])
+    },[isLogado])
     return(
         <AppBar position={"sticky"}>
             <Toolbar>
-                <BotoesSessaoVazia/>
+
                 {
                     isLogado?
                         <Link to={`/`} onClick={limparSessao}>Sair</Link>
-                        : <></>
+                        : <BotoesSessaoVazia/>
                 }
 
                {/* <button onClick={()=>setAbrirMenu(!abrirMenu)}>
