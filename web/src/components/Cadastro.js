@@ -42,6 +42,7 @@ const Cadastro = ({historia,msgBotao,camposAdicionais,
             if(usuarioExistente.length===0 && isCadastro) {
                 dadosDB.push(dadosUsuario)
                 localStorage.setItem(select_from, JSON.stringify(dadosDB))
+                setAlerta('Cadastrado com sucesso')
             }else{
                 if(usuarioExistente[0]){
                     setAlerta('Conta inexistente')

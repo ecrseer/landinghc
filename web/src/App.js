@@ -18,6 +18,7 @@ import SectionCards from "./components/SectionCards";
 import Card from "./components/Card";
 import Cadastro from "./components/Cadastro";
 import LoginSignin from "./largecomponents/LoginSignin";
+import PainelControle from "./largecomponents/PainelControle";
 
 function App() {
 
@@ -61,11 +62,7 @@ function App() {
 
             <Route className="" exact path={`/`}>
                 <div className=" App-header main">
-                    <Card/>
-                    <div> Vitrine:
-                    <SectionCards/>
-                    </div>
-                    <Card/>
+                    <PainelControle/>
                 </div>
             </Route>
 
