@@ -12,7 +12,7 @@ const BotoesSessaoVazia = ()=>(
         <Link to={`/entraradmin`}>Entrar(administrador)</Link>
         <Link to={`/ficarsabendo`} className="diminuirlink">Receba as melhores ofertas no seu email</Link>
 
-        <Link to={`/`} onClick={limparSessao}>Sair</Link>
+
     </div>
 )
 
@@ -24,6 +24,8 @@ const Navbar=()=>{
         const usuarioLogado = localStorage.getItem('sessaoAtual')
         if (usuarioLogado){
             setIsLogado(true)
+        }else{
+            setIsLogado(false)
         }
 
     },[])
@@ -31,6 +33,11 @@ const Navbar=()=>{
         <AppBar position={"sticky"}>
             <Toolbar>
                 <BotoesSessaoVazia/>
+                {
+                    isLogado?
+                        <Link to={`/`} onClick={limparSessao}>Sair</Link>
+                        : <></>
+                }
 
                {/* <button onClick={()=>setAbrirMenu(!abrirMenu)}>
                     menu

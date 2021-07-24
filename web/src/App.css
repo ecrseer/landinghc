@@ -7,6 +7,12 @@
   --cor-primaria:#e5007d;
   --cor-segundaria:#fdc100;
 }
+.main > * {
+  margin: 0.7vh;
+
+
+
+}
 footer{
   background: var(--cor-primaria);
   width: 100%;

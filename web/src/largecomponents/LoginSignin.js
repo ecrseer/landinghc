@@ -11,9 +11,12 @@ const CAMPOS_LOGIN_ADMIN=[
 const BotaoCadastrese = () =>(
     <section>
         <p>Nao tem conta? cadastre-se aqui</p>
-        <Link to={`/criaradmin`} className="btnpadrao">
-            Se cadastre
-        </Link>
+        <div>
+            <Link to={`/criaradmin`} className="btnpadrao">
+                Se cadastre
+            </Link>
+        </div>
+
     </section>
 )
 
