@@ -9,7 +9,7 @@ const ListaCategorica = ({itensLista,selecionaEmail})=>{
             <li onClick={()=>{
                 setStatePainel(
                     {...statePainel,clientes:[{email:'raimunda'}]} )
-            } }>joao {
+            } } >joao {
                 statePainel.clientes[0].email ? statePainel.clientes[0].email
                     : 'veio nao'
             }</li>
