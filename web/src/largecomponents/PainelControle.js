@@ -57,7 +57,7 @@ const PainelControle= ({useLogado}) => {
                         :
                         <div className="">
                         <button className="btnpadrao" onClick={()=>{setCriarProduto(!criarProduto)}}>
-                            {'Criar Produto'}</button>
+                            {criarProduto?'Voltar':'Criar Produto'}</button>
 
                             <Card/>
                         </div>
@@ -79,7 +79,7 @@ const PainelControle= ({useLogado}) => {
                         <button className="btnpadrao" onClick={() => {
                             setCriarCliente(!criarCliente)
                         }}>
-                            Criar/Editar cliente
+                            {criarCliente? 'Voltar' : 'Criar/Editar cliente'}
                         </button>
                         <ListaCategorica/>
                     </div>}
@@ -89,6 +89,7 @@ const PainelControle= ({useLogado}) => {
         </>
     )
 }
+
 
 
 export default  PainelControle;

@@ -19,3 +19,8 @@
     background: var(--cor-primaria);
 
 }
+.btnpadrao:active{
+    color:#fdc100;
+    background: var(--cor-primaria);
+
+}
