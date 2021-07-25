@@ -19,14 +19,28 @@ import Card from "./components/Card";
 import Cadastro from "./components/Cadastro";
 import LoginSignin from "./largecomponents/LoginSignin";
 import PainelControle from "./largecomponents/PainelControle";
+import {useEffect, useState} from "react";
 
 function App() {
+    const [isLogado,setIsLogado] = useState(false)
+    useEffect(()=>{
+        const usuarioLogado = localStorage.getItem('sessaoAtual')
+        if (usuarioLogado){
+            setIsLogado(true)
+        }else{
+            setIsLogado(false)
+        }
+
+    },[])
+    function handleIsLogado(){
+        return [isLogado,setIsLogado]
+    }
 
     const history = useHistory();
   return (
       <BrowserRouter>
       <div className="App">
-        <Navbar/>
+        <Navbar useLogado={handleIsLogado}/>
         <Switch>
             <Route className="" path="/ficarsabendo">
                 <Landing/>
@@ -47,14 +61,14 @@ function App() {
             </Route>
             <Route className={""} exact path={`/entraradmin`}>
                 <div className=" App-header main">
-                    <LoginSignin isCadastro={false}/>
+                    <LoginSignin isCadastro={false} useLogado={handleIsLogado}/>
                     <SectionCards/>
                     <Card/>
                 </div>
             </Route>
             <Route className={""} exact path={`/criaradmin`}>
                 <div className=" App-header main">
-                    <LoginSignin isCadastro={true}/>
+                    <LoginSignin isCadastro={true} />
                     <SectionCards/>
                     <Card/>
                 </div>
@@ -62,7 +76,7 @@ function App() {
 
             <Route className="" exact path={`/`}>
                 <div className=" App-header main">
-                    <PainelControle/>
+                    <PainelControle useLogado={handleIsLogado}/>
                 </div>
             </Route>
 

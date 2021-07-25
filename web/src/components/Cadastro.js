@@ -2,12 +2,19 @@ import {useEffect, useState} from "react";
 import {useHistory, useRouteMatch} from 'react-router-dom';
 import './Cadastro.css'
 const Cadastro = ({historia,msgBotao,camposAdicionais,
-                      isLoginAdmin=false,isCadastro=true})=>{
+                      storageDoCadastro=false,isCadastro=true,
+                    useLogado
+                  })=>{
     let history = useHistory()
     let match = useRouteMatch();
     const [dadosUsuario,setDadosUsuario] = useState({nome:'',email:''})
     const [nomeUsuario,setNomeUsuario] = useState("")
     const [alerta,setAlerta] = useState('')
+
+    const useLogar = useLogado? useLogado : ()=>[false,()=>{}]
+
+    const [isLogado,setIsLogado] = useLogar()
+
     function atualizadorDados(evento){
 
         function atualizaEstadoObjeto(objetoAnterior){
@@ -22,7 +29,7 @@ const Cadastro = ({historia,msgBotao,camposAdicionais,
     }
 
     function salvaStorage(){
-        const select_from = isLoginAdmin? 'dadosAdmin' :'dadosUsuarios'
+        const select_from = storageDoCadastro? storageDoCadastro :'dadosUsuarios'
         let dadosDB = JSON.parse(localStorage.getItem(select_from))
         if(!dadosDB){
             dadosDB=[]
@@ -52,6 +59,7 @@ const Cadastro = ({historia,msgBotao,camposAdicionais,
                         localStorage.setItem("sessaoAtual",
                             JSON.stringify(usuarioExistente[0]))
                         history.push("/")
+                        setIsLogado(true)
                         return
                     }
                 }
@@ -60,7 +68,7 @@ const Cadastro = ({historia,msgBotao,camposAdicionais,
                     setAlerta('Conta inexistente')
                     return;
                 }
-                if(isLoginAdmin){
+                if(storageDoCadastro){
                     setAlerta('Senha incorreta, tente novamente')
                 }else{
                     setAlerta('Email ja cadastrado, escolha outro')
@@ -103,9 +111,7 @@ const Cadastro = ({historia,msgBotao,camposAdicionais,
             <div> <input type="text" placeholder="Como deseja ser chamado"
                               className="type" name="nome"
                               onChange={atualizadorDados}  /></div>
-            <div> <input type="email"  className="type"
-                               required placeholder="Seu melhor email"
-                               name="email" onChange={atualizadorDados}/></div>
+
             {
                 camposAdicionais?
                     camposAdicionais.map(descricaoCampo=>{
@@ -122,7 +128,9 @@ const Cadastro = ({historia,msgBotao,camposAdicionais,
                         )
                     })
                     :
-                    <></>
+                    <div> <input type="email"  className="type"
+                                 required placeholder="Seu melhor email"
+                                 name="email" onChange={atualizadorDados}/></div>
             }
 
             <button   className="btnpadrao" onClick={handleFormulario}>

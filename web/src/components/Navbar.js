@@ -2,33 +2,32 @@ import {Link, useHistory} from 'react-router-dom';
 import {Menu,Toolbar,MenuItem,AppBar} from '@material-ui/core'
 import {useEffect, useState} from "react";
 import './Navbar.css'
-function limparSessao(){
-    localStorage.removeItem('sessaoAtual')
-}
+
 
 const BotoesSessaoVazia = ()=>(
     <div>
-        <Link to={`/logar`}> Entrar</Link>
-        <Link to={`/entraradmin`}>Entrar(administrador)</Link>
+        <Link to={`/logar`}> Clientes</Link>
+        <Link to={`/entraradmin`}>ADMilsons</Link>
         <Link to={`/ficarsabendo`} className="diminuirlink">Receba as melhores ofertas no seu email</Link>
 
 
     </div>
 )
 
-const Navbar=()=>{
+const Navbar=({useLogado})=>{
+
+
     let history = useHistory()
     const [abrirMenu,setAbrirMenu] = useState(false)
-    const [isLogado,setIsLogado] = useState(false)
-    useEffect(()=>{
-        const usuarioLogado = localStorage.getItem('sessaoAtual')
-        if (usuarioLogado){
-            setIsLogado(true)
-        }else{
-            setIsLogado(false)
-        }
+    const [isLogado,setIsLogado] = useLogado()
 
-    },[isLogado])
+
+    function limparSessao(){
+        localStorage.removeItem('sessaoAtual')
+        history.push("/")
+        setIsLogado(false)
+    }
+
     return(
         <AppBar position={"sticky"}>
             <Toolbar>
