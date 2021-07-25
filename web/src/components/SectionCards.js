@@ -29,14 +29,20 @@ const SectionCards = ()=>{
     },[statePainel])
     return(
         <div className="SectionCards">
+
             {statePainel?
                 statePainel.clienteSelecionado?
-                        statePainel.clienteSelecionado.produtos.map(produto=>(
-                            <div>{produto.nome}</div>
+                        statePainel.clienteSelecionado.produtos.map((produto,index)=>(
+                            <div key={index}
+                                onClick={()=>{}}>
+                                {produto.nome}
+                                <button></button>
+                            </div>
                         )):
                     <></>
             :<></>
             }
+
            <MockCards/>
         </div>
     )

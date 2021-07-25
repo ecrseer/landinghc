@@ -26,6 +26,7 @@ const Cadastro = ({historia,msgBotao,camposAdicionais,
 
         setDadosUsuario(atualizaEstadoObjeto)
         console.log(dadosUsuario)
+
     }
 
     function salvaStorage(){
@@ -50,6 +51,7 @@ const Cadastro = ({historia,msgBotao,camposAdicionais,
                 dadosDB.push(dadosUsuario)
                 localStorage.setItem(select_from, JSON.stringify(dadosDB))
                 setAlerta('Cadastrado com sucesso')
+                return;
             }else{
                 if(usuarioExistente[0]){
                     setAlerta('Conta inexistente')
@@ -74,18 +76,8 @@ const Cadastro = ({historia,msgBotao,camposAdicionais,
                     setAlerta('Email ja cadastrado, escolha outro')
                 }
 
-
-
             }
 
-
-        /*
-        /!*a*!/
-        let serializados=JSON.stringify(dadosDB)
-        localStorage.setItem('dadosUsuarios',dadosSerializados)
-
-        const dadosSerializados = JSON.stringify(dadosUsuario);
-        localStorage.setItem('dadosUsuarios',dadosSerializados)*/
     }
 
     function handleFormulario(evento){

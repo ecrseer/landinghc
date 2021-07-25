@@ -17,7 +17,7 @@ const BotaoCadastrese = () =>(
         <p>Nao tem conta? cadastre-se aqui</p>
         <div>
             <Link to={`/criaradmin`} className="btnpadrao">
-                Se cadastre
+                Cadastrar
             </Link>
         </div>
 

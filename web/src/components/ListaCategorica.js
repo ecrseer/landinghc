@@ -1,7 +1,7 @@
 import {useContext} from "react";
 import {PainelControleContext} from "../hooks/usePainelControle";
 
-const ListaCategorica = ({itensLista,selecionaEmail})=>{
+const ListaCategorica = ({itensLista})=>{
     const [statePainel,setStatePainel] = useContext(PainelControleContext)
     return(
         <div>

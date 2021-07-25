@@ -18,6 +18,7 @@ const PainelControleContext = createContext([PainelDados,()=>{}])
 const PainelControleProvider = (props) =>{
     const [statePainel,setStatePainel] = useState(PainelDados)
     return(
+
         <PainelControleContext.Provider value={[statePainel,setStatePainel]}>
             {props.children}
         </PainelControleContext.Provider>

@@ -5,7 +5,7 @@ const Card = ()=>{
         <p>R$ preco</p>
         <p>R$ preco</p>
         <p>R$ preco</p>
-        <img src="" alt=""/>
+
     </div>
     )
 }

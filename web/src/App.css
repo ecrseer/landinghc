@@ -24,7 +24,9 @@ footer{
 .main {
 
   display: grid;
-  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-columns: 1fr ;
+  border: 1px solid green;
+
 }
 @media (max-width: 600px){
   .main{

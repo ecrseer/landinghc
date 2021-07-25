@@ -17,16 +17,12 @@ const CAMPOS_CADASTRO_CLIENTE=[
         placehold:'Digite sua senha'}
 ]
 const PainelControle= ({useLogado}) => {
-    const [emailSelecionado,setEmailSelecionado] = useState('')
+
     const [criarCliente,setCriarCliente] = useState(false)
 
     const useLogar = useLogado? useLogado : ()=>[false,()=>{}]
 
     const [isLogado,setIsLogado] = useLogar()
-
-    function putEmailSelecionado(email){
-        setEmailSelecionado(email)
-    }
 
     const MockPaginaInicial=()=>(
         <>
@@ -37,8 +33,9 @@ const PainelControle= ({useLogado}) => {
     )
 
     return(
-        {isLogado ?
-        <MockPaginaInicial/>
+        <>
+            {!isLogado ?
+                <MockPaginaInicial/>
                 :
                 <PainelControleProvider className="App-header main">
                     {criarCliente?
@@ -51,15 +48,17 @@ const PainelControle= ({useLogado}) => {
                     <div> Vitrine:
                         <SectionCards/>
                     </div>
-                    <div>
+                    <div className="listaClientes">
                         <button className="btnpadrao" onClick={()=>{setCriarCliente(!criarCliente)}}>
                             Criar/Editar cliente</button>
-                        <ListaCategorica selecionaEmail={putEmailSelecionado}/>
+                        <ListaCategorica  />
                     </div>
 
                 </PainelControleProvider>
-        }
+            }
+        </>
     )
 }
+
 
 export default  PainelControle;
