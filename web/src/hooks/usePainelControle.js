@@ -1,16 +1,19 @@
 
 import {createContext, useContext, useState} from "react"
+const mockProdutos = [
+    {id:12,nome:'jarro de surf'},
+    {id:14,nome:'prancha de surf'},
+]
 const PainelDados = {
     clientes:[{
         email:"lindomar@mar",
-        produtos:[{nome:'prancha de surf'}]
+        produtos:[mockProdutos[1]]
     },
         {
             email:"arlene@mar",
-            produtos:[{nome:'jarro de surf'}]
         }
     ],
-    produtos:[],
+    produtos:mockProdutos,
     clienteSelecionado:null
 }
 const PainelControleContext = createContext([PainelDados,()=>{}])

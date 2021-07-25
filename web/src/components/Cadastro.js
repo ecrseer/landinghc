@@ -2,7 +2,7 @@ import {useEffect, useState} from "react";
 import {useHistory, useRouteMatch} from 'react-router-dom';
 import './Cadastro.css'
 const Cadastro = ({historia,msgBotao,camposAdicionais,
-                      storageDoCadastro=false,isCadastro=true,
+                      storageDoCadastro='',isCadastro=true,
                     useLogado
                   })=>{
     let history = useHistory()
@@ -100,7 +100,7 @@ const Cadastro = ({historia,msgBotao,camposAdicionais,
     return(
         <form id="debg" action="" method="GET">
             <span style={{color:'#444'}}>{alerta}</span>
-            <div> <input type="text" placeholder="Como deseja ser chamado"
+            <div> <input type="text" placeholder="Nome"
                               className="type" name="nome"
                               onChange={atualizadorDados}  /></div>
 
