@@ -15,7 +15,7 @@ const ListaCategorica = ({itensLista})=>{
 
                     {statePainel?
                         statePainel.clientes?
-                            statePainel.clientes.map((cliente,index)=>
+                            statePainel.clientes?.map((cliente,index)=>
                                 <li key={index}
                                     onClick={()=>{
                                         setStatePainel({...statePainel,

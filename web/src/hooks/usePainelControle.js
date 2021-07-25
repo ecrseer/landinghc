@@ -46,9 +46,6 @@ const PainelDados = {
     produtos:produtosStorage,
     clienteSelecionado:null
 }
-const PainelDados2 = {
-    clientes:clientesStorage,
-}
 const PainelControleContext = createContext([PainelDados,()=>{}])
 
 const PainelControleProvider = (props) =>{

@@ -1,12 +1,18 @@
-import {useEffect, useState} from "react";
+import {useContext, useEffect, useState} from "react";
 import {useHistory, useRouteMatch} from 'react-router-dom';
 import './Cadastro.css'
+import {PainelControleContext} from "../hooks/usePainelControle";
+import localStoNames from '../assets/mylocalStorageNames.json'
+
+
 const Cadastro = ({historia,msgBotao,camposAdicionais,
                       storageDoCadastro='',isCadastro=true,
                     useLogado
                   })=>{
     let history = useHistory()
     let match = useRouteMatch();
+    const [statePainel,setStatePainel] = useContext(PainelControleContext)
+
     const [dadosUsuario,setDadosUsuario] = useState({nome:'',email:''})
     const [nomeUsuario,setNomeUsuario] = useState("")
     const [alerta,setAlerta] = useState('')
@@ -50,6 +56,20 @@ const Cadastro = ({historia,msgBotao,camposAdicionais,
             if(usuarioExistente.length===0 && isCadastro) {
                 dadosDB.push(dadosUsuario)
                 localStorage.setItem(select_from, JSON.stringify(dadosDB))
+
+
+                let listaDeItensJaCadastrados=[];
+                if(storageDoCadastro===localStoNames.lClientes){
+                    listaDeItensJaCadastrados=statePainel.clientes;
+                    listaDeItensJaCadastrados.push(dadosUsuario);
+                    setStatePainel({...statePainel,clientes:listaDeItensJaCadastrados})
+                }else if(storageDoCadastro===localStoNames.lProdutos){
+                    listaDeItensJaCadastrados=statePainel.produtos;
+                    listaDeItensJaCadastrados.push(dadosUsuario)
+                    setStatePainel({...statePainel,produtos:listaDeItensJaCadastrados})
+                }
+
+
                 setAlerta('Cadastrado com sucesso')
                 return;
             }else{
