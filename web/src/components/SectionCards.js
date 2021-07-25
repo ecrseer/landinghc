@@ -1,26 +1,43 @@
-import {useEffect, useState} from "react";
+import {useContext, useEffect, useState} from "react";
 import Card from "./Card"
 import './SectionCards.css'
+import {PainelControleContext} from "../hooks/usePainelControle";
+
 
 const SectionCards = ()=>{
-    const [produtos,setProdutos] = useState();
+    const MockCards=()=>(
+        <>
+            <Card/>
+            <Card/>
+            <Card/>
+
+            <Card/>
+            <Card/>
+            <Card/>
+
+            <Card/>
+            <Card/>
+            <Card/>
+        </>
+    )
+    const [statePainel,setStatePainel] = useContext(PainelControleContext)
+
+
     useEffect(()=>{
 
 
-    },[])
+    },[statePainel])
     return(
         <div className="SectionCards">
-            <Card/>
-            <Card/>
-            <Card/>
-
-            <Card/>
-            <Card/>
-            <Card/>
-
-            <Card/>
-            <Card/>
-            <Card/>
+            {statePainel?
+                statePainel.clienteSelecionado?
+                        statePainel.clienteSelecionado.produtos.map(produto=>(
+                            <div>{produto.nome}</div>
+                        )):
+                    <></>
+            :<></>
+            }
+           <MockCards/>
         </div>
     )
 }

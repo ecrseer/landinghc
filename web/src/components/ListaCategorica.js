@@ -6,16 +6,21 @@ const ListaCategorica = ({itensLista,selecionaEmail})=>{
     return(
         <ul>
             <p>Clientes</p>
-            <li onClick={()=>{
-                setStatePainel(
-                    {...statePainel,clientes:[{email:'raimunda'}]} )
-            } } >joao {
-                statePainel.clientes[0].email ? statePainel.clientes[0].email
-                    : 'veio nao'
-            }</li>
-            <li onClick={selecionaEmail}>joao</li>
-            <li onClick={selecionaEmail}>joao</li>
+
+
+            {statePainel?
+                statePainel.clientes?
+                    statePainel.clientes.map((cliente,index)=>
+                        <li key={index}
+                            onClick={()=>{
+                            setStatePainel({...statePainel,
+                            clienteSelecionado: cliente})
+                            }
+                        }>{cliente.email}</li>
+                ): <></>
+            :<></>}
         </ul>
     )
 }
+
 export default ListaCategorica;
