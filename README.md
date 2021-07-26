@@ -3,7 +3,7 @@
 
 Projeto de um site para manejo de produtos e clientes desenvolvido em React 
 
-####link deploy: https://landingblackfridayjustino.netlify.app/
+### link deploy: https://landingblackfridayjustino.netlify.app/
 
 
 
