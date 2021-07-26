@@ -22,13 +22,19 @@ const SectionCards = ({isLogado})=>{
     },[statePainel])
     return(
         <div className="SectionCards">
-            {statePainel.clienteSelecionado?
+            <div className="SectionCards carrinho">
+                <footer>carrinho</footer>
+                {statePainel.clienteSelecionado?
                     <ProdutosNoCarrinhoDoCliente clienteSelecionad={statePainel.clienteSelecionado}/>
-            :
-                <></>
-            }
+                    :
+                    <></>
+                }
+            </div>
+            <div className="SectionCards vitrine">
+                <footer>Vitrine</footer>
+                <ProdutosNaVitrine todosProdutos={statePainel.produtos}/>
+            </div>
 
-            <ProdutosNaVitrine todosProdutos={statePainel.produtos}/>
         </div>
     )
 }
