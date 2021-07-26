@@ -23,9 +23,12 @@ const SectionCards = ({isLogado})=>{
     return(
         <div className="SectionCards">
             <div className="SectionCards carrinho">
-                <footer>carrinho</footer>
+
                 {statePainel.clienteSelecionado?
-                    <ProdutosNoCarrinhoDoCliente clienteSelecionad={statePainel.clienteSelecionado}/>
+                    <><footer>carrinho</footer>
+                        <ProdutosNoCarrinhoDoCliente clienteSelecionad={statePainel.clienteSelecionado}/>
+                    </>
+
                     :
                     <></>
                 }
