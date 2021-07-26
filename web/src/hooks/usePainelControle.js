@@ -9,6 +9,16 @@ let clientesStorage = JSON.parse(
      localStorage.getItem(localStoNames.lClientes)
 )
 function referenciaDorProdutoStorageNosClientes(){
+    if(!produtosStorage){
+        produtosStorage=[]
+        localStorage.setItem(localStoNames.lProdutos,JSON.stringify([]))
+
+    }
+    if(!clientesStorage){
+        clientesStorage=[]
+        localStorage.setItem(localStoNames.lClientes,JSON.stringify([]))
+
+    }
     clientesStorage.forEach((cliente)=>{
         if(!cliente.produtos){
             cliente.produtos=[]

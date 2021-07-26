@@ -3,18 +3,12 @@ import Card from "./Card"
 import './SectionCards.css'
 import {PainelControleContext} from "../hooks/usePainelControle";
 import localStoNames from '../assets/mylocalStorageNames.json'
+import {ProdutosNaVitrine,ProdutosNoCarrinhoDoCliente}
+    from "./ProdutoVitrine";
 
-const SectionCards = ()=>{
+const SectionCards = ({isLogado})=>{
     const MockCards=()=>(
         <>
-            <Card/>
-            <Card/>
-            <Card/>
-
-            <Card/>
-            <Card/>
-            <Card/>
-
             <Card/>
             <Card/>
             <Card/>
@@ -22,54 +16,22 @@ const SectionCards = ()=>{
     )
     const [statePainel,setStatePainel] = useContext(PainelControleContext)
 
-    function cadastraLocalStorageEmemoria(produto){
-        if(!statePainel.clienteSelecionado.produtos){
-            setStatePainel({...statePainel,clienteSelecionado: {
-                ...statePainel.clienteSelecionado,
-                    produtos:[]
-                }})
-        }
-        const novaListaProdutos = statePainel.clienteSelecionado.produtos.push(produto)
-        setStatePainel({...statePainel,clienteSelecionado: {
-                ...statePainel.clienteSelecionado,
-                produto:novaListaProdutos
-            }})
-
-
-        let clientesDB = JSON.parse(localStorage.getItem(localStoNames.lClientes))
-        for (let i = 0; i < clientesDB.length; i++) {
-            if(clientesDB[i].email===statePainel.clienteSelecionado.email){
-                clientesDB[i]=statePainel.clienteSelecionado;
-            }
-        }
-
-        localStorage.setItem(localStoNames.lClientes,JSON.stringify(clientesDB));
-
-    }
 
     useEffect(()=>{
 
-    },[statePainel?.clienteSelecionado?.produtos])
+    },[statePainel])
     return(
         <div className="SectionCards">
-
-            {statePainel?
-                statePainel.clienteSelecionado?
-                        statePainel.clienteSelecionado.produtos?.map((produto,index)=>(
-                            <div key={index}
-                                onClick={()=>{}}>
-                                <div>{produto.nome}</div>
-
-                                <button onClick={()=>cadastraLocalStorageEmemoria(produto)}>
-                                    +</button>
-                            </div>
-                        )):
-                    <></>
-            :<></>
+            {statePainel.clienteSelecionado?
+                    <ProdutosNoCarrinhoDoCliente clienteSelecionad={statePainel.clienteSelecionado}/>
+            :
+                <></>
             }
 
-           <MockCards/>
+            <ProdutosNaVitrine todosProdutos={statePainel.produtos}/>
         </div>
     )
 }
+
+
 export default SectionCards;

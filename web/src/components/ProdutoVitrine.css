@@ -1,0 +1,16 @@
+.produtoVt{
+    border: 1px solid var(--cor-primaria);
+    margin: 1vh;
+    padding: 1vh;
+    background-color: rgba(1,1,1,0.5);
+    color: wheat;
+
+}
+.produtoVt p{
+    margin: 0;
+}
+.produtoVt .btnpadrao{
+    min-width: 0;
+    background-color: rgba(255,255,255,0.5);
+
+}

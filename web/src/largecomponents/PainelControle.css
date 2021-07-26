@@ -13,3 +13,10 @@ form{
 .btnpadrao{
     margin:0 auto
 }
+.listaClientes > ul {
+
+    background: var(--cor-primaria);
+    color: var(--cor-segundaria);
+    width: 200px;
+
+}

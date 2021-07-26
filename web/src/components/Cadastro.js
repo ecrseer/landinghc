@@ -31,7 +31,7 @@ const Cadastro = ({historia,msgBotao,camposAdicionais,
         }
 
         setDadosUsuario(atualizaEstadoObjeto)
-        console.log(dadosUsuario)
+
 
     }
 
@@ -126,9 +126,10 @@ const Cadastro = ({historia,msgBotao,camposAdicionais,
 
             {
                 camposAdicionais?
-                    camposAdicionais.map(descricaoCampo=>{
+                    camposAdicionais.map((descricaoCampo,index)=>{
                         return(
-                            <div>
+                            <div key={index}
+                            >
                                 <input type={descricaoCampo.tipo}
                                        required
                                        className="type"

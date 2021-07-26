@@ -6,6 +6,7 @@
   flex-direction: column;
   --cor-primaria:#e5007d;
   --cor-segundaria:#fdc100;
+  --cor-terciaria:#1a1a18;
 }
 .main > * {
   margin: 0.7vh;

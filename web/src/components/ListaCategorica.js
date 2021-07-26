@@ -1,10 +1,12 @@
 import {useContext} from "react";
+import './ListaCategorica.css'
 import {PainelControleContext} from "../hooks/usePainelControle";
 
 const ListaCategorica = ({itensLista})=>{
     const [statePainel,setStatePainel] = useContext(PainelControleContext)
+
     return(
-        <div>
+        <div className="clienteselecionado">
             <header>
 
             </header>
@@ -18,10 +20,16 @@ const ListaCategorica = ({itensLista})=>{
                             statePainel.clientes?.map((cliente,index)=>
                                 <li key={index}
                                     onClick={()=>{
+                                        let selecao=null
+                                        if(!statePainel.clienteSelecionado){
+                                            selecao=cliente
+                                        }
                                         setStatePainel({...statePainel,
-                                            clienteSelecionado: cliente})
+                                            clienteSelecionado: selecao})
                                     }
-                                    }>{cliente.email}</li>
+                                    }
+                                    className={'.clienteselecionado'}
+                                >{cliente.email}</li>
                             ): <></>
                         :<></>}
                 </ul>

@@ -2,9 +2,9 @@ const Card = ()=>{
     return(
     <div className="card">
         <p>Produto</p>
-        <p>R$ preco</p>
-        <p>R$ preco</p>
-        <p>R$ preco</p>
+        <p>__Categoria__</p>
+        <p>__Categoria__</p>
+        <p>__Categoria__</p>
 
     </div>
     )

@@ -20,10 +20,10 @@ const CAMPOS_CADASTRO_CLIENTE=[
         placehold:'Senha'}
 ]
 const CAMPOS_CADASTRO_PRODUTO=[
-    {nome:'Preço',
+    {nome:'preco',
         tipo:'text',
         placehold:'Preço'},
-    {nome:'Quantia',
+    {nome:'qtd',
         tipo:'number',
         placehold:'Quantidade'},
 ]
@@ -64,8 +64,9 @@ const PainelControle= ({useLogado}) => {
                     }
 
 
-                    <div> Vitrine:
-                        <SectionCards/>
+                    <div>
+                        <SectionCards isLogado={isLogado}/>
+
                     </div>
 
 

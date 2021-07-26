@@ -29,7 +29,7 @@ const Navbar=({useLogado})=>{
     }
 
     return(
-        <AppBar position={"sticky"}>
+        <AppBar position={"sticky"}  style={{backgroundColor: 'var(--cor-terciaria)'}}>
             <Toolbar>
 
                 {
